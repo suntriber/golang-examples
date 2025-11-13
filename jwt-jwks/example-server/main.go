@@ -36,7 +36,7 @@ func main() {
 
 	m := mux.NewRouter()
 	m.HandleFunc("/jwks", giveJWKSHandler)
-	m.HandleFunc("/token", giveJWTHandler)
+	m.HandleFunc("/jwt", giveJWTHandler)
 	if err := http.ListenAndServe(addr, m); err != nil { // listens to :<port>, call either /jwks or /token
 		fmt.Printf("Server down: %v\n", err)
 	}
